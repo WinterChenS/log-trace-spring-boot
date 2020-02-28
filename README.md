@@ -60,7 +60,8 @@
 2. `log-trace-service-a-demo` 充当服务A
 3. `log-trace-service-b-demo` 充当服务B
 
-** 配置日志logback.xml或者logback-spring.xml **
+
+**配置日志logback.xml或者logback-spring.xml**
 
 ```xml
 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -142,11 +143,9 @@ spring.trace.log.format=X-B3-TraceId,X-B3-ParentName
 
 > 示例代码地址:[log-trace-spring-boot](https://github.com/purgeteam/log-trace-spring-boot)
 
-> 作者GitHub:
-[Purgeyao](https://github.com/purgeyao) 欢迎关注
-
-> qq交流群: `812321371` 微信交流群: `MercyYao`
-
-> 微信公众号:
-
-![微信公众号二维码](https://purgeyao.github.io/img/about-my-mp-8cm.jpg)
+2020/2/28:
+winter：
+在实际使用过程中遇到的问题：
+1. 公司的项目使用了Hystrix，切换线程的时候会丢失ThreadLocal，所以添加了Hystrix的支持，非常感激这个项目[spring-boot-student-hystrix](https://github.com/wyh-spring-ecosystem-student/spring-boot-student/tree/releases/spring-boot-student-hystrix)
+   解决了我遇到的问题，其实问题我之前找到了是因为线程切换的问题，hystrix肯定是有相关的支持的，搜索了一下就找到了这个解答；
+2. 添加了对于方法的切面，对于一些方法会打印出入参数，以及方法的耗时；
